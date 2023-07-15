@@ -21,7 +21,6 @@ return {
     "nvim-telescope/telescope.nvim",
     version = "0.x.x",
     config = setup,
-    keys = require"fmiguel.keybinds".telescope_keybinds,
     dependencies = {
       {"nvim-telescope/telescope-fzf-native.nvim", build = "make" },
     },

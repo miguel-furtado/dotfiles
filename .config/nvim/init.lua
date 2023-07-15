@@ -32,7 +32,11 @@ if not vim.loop.fs_stat(lazypath) then
   })
 end
 vim.opt.rtp:prepend(lazypath)
-require("lazy").setup("fmiguel.plugins")
+require("lazy").setup("fmiguel.plugins", {
+  defaults = {
+    lazy = true,
+  }
+})
 
 require("fmiguel.colors")
 local keybinds = require("fmiguel.keybinds")

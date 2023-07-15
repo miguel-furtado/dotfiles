@@ -1,6 +1,7 @@
 return {
   {
     "ahmedkhalf/project.nvim",
+    event = "VeryLazy",
     config = function()
       require("project_nvim").setup {
         -- order matters as latter ones are used as fallback
