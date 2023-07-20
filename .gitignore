@@ -7,6 +7,5 @@
 .sync_*.db-wal
 .sync_*.db-shm
 
-.zsh/zsh-autosuggestions/
-
 dotbot/
+zsh/zsh-autosuggestions/
