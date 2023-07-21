@@ -47,6 +47,13 @@ if [ "$DISTRO" = "ubuntu" ]; then
 fi
 
 # starship prompt
-eval "$(starship init zsh)"
+command -v "starship" &> /dev/null
+if [ $? -eq 0 ]; then
+    eval "$(starship init zsh)"
+fi
 
-eval "$(zoxide init zsh)"
+command -v "zoxide" &> /dev/null
+if [ $? -eq 0 ]; then
+    eval "$(zoxide init zsh)"
+fi
+
