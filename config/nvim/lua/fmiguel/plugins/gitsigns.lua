@@ -3,7 +3,7 @@ return {
     "lewis6991/gitsigns.nvim",
     version = "0.x.x",
     event = "VeryLazy",
-    config = {
+    opts = {
       signs = {
         add = { text = "+" },
         change = { text = "~" },

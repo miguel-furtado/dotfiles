@@ -1,4 +1,4 @@
-config = {
+local options = {
   presets = {
     bottom_search = true,
     long_message_to_split = true,
@@ -83,7 +83,7 @@ return {
         version = "0.x.x",
       },
     },
-    config = config,
+    opts = options,
   },
 }
 

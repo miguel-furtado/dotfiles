@@ -1,11 +1,11 @@
 return {
   {
     "windwp/nvim-autopairs", -- auto-close pairs
-    config = {
+    event = "InsertEnter",
+    opts = {
       check_ts = true,
       disable_filetype = { "TelescopePrompt" },
     },
-    event = "InsertEnter",
   },
 }
 

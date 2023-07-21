@@ -1,8 +1,8 @@
 return {
   {
     "prichrd/netrw.nvim",
-    config = {},
-    ft = "netrw"
+    ft = "netrw",
+    opts = {},
   },
 }
 

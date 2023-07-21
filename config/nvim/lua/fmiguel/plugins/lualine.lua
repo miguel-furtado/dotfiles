@@ -2,7 +2,7 @@ return {
   {
     "nvim-lualine/lualine.nvim",
     event = "VeryLazy",
-    config = {
+    opts = {
         options = {
           globalstatus = true,
           component_separators = "|",
