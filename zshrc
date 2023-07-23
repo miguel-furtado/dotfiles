@@ -4,11 +4,6 @@ export PATH=$HOME/.local/bin:$PATH \
     XDG_CONFIG_HOME=$HOME/.config/ \
     DISTRO=$(grep "^ID=" /etc/os-release | cut -d = -f 2)
 
-
-# some colour plz
-alias ls='ls --color=auto'
-alias grep='grep --color'
-
 # Config history
 HISTFILE=~/.local/share/zsh_history
 SAVEHIST=50000
@@ -20,22 +15,11 @@ setopt hist_ignore_space      # ignore commands that start with space
 setopt hist_verify            # show command with history expansion to user before running it
 setopt share_history          # share command history data betwenn sessions
 
-# Enable zsh-autosuggestions
-auto_sugg_path="$HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh"
-if [ -f $auto_sugg_path ]; then
-    source $auto_sugg_path
-fi
-
 # Load aliases
-source ~/.zsh/aliases.zsh
+. ~/.zsh/aliases.zsh
 
 # enable vim mode
 bindkey -v
-
-# asdf
-. $HOME/.asdf/asdf.sh
-
-. ~/.zsh/completion.zsh
 
 if [ "$DISTRO" = "ubuntu" ]; then
     # Get ubuntu suggestions on the package to install to provide a command which
@@ -43,12 +27,25 @@ if [ "$DISTRO" = "ubuntu" ]; then
     . /etc/zsh_command_not_found
 fi
 
+# Better completion settings copied from oh-my-zsh
+. ~/.zsh/completion.zsh
+
+# zsh-autosuggestions
+auto_sugg_path="$HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh"
+if [ -f $auto_sugg_path ]; then
+    . $auto_sugg_path
+fi
+
+# asdf
+. $HOME/.asdf/asdf.sh
+
 # starship prompt
 command -v "starship" &> /dev/null
 if [ $? -eq 0 ]; then
     eval "$(starship init zsh)"
 fi
 
+# zoxide
 command -v "zoxide" &> /dev/null
 if [ $? -eq 0 ]; then
     eval "$(zoxide init zsh)"

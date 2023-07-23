@@ -1,3 +1,5 @@
+# Better config settings copied from oh-my-zsh
+
 # fixme - the load process here seems a bit bizarre
 zmodload -i zsh/complist
 
