@@ -27,30 +27,24 @@ local ft = {
   "json",
 }
 
-function setup()
-  require"mason".setup {
-      PATH = "prepend",
-  }
-  require("mason-lspconfig").setup {
+function setup_lsp(servers)
+  require"mason-lspconfig".setup {
     ensure_installed = lsp_servers,
   }
-  setup_lspconfig(lsp_servers)
-  setup_dap(dap_servers)
-end
 
-function setup_lspconfig(servers)
   local capabilities = vim.lsp.protocol.make_client_capabilities()
   capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 
-  local keybinds = require("fmiguel.keybinds")
-  for _, lsp in ipairs(servers) do
-    require("lspconfig")[lsp].setup {
-      on_attach = function()
-        keybinds.set_lsp_keybinds()
-      end,
-      capabilities = capabilities,
-    }
-  end
+  require"mason-lspconfig".setup_handlers {
+    function (server_name) -- default handler (optional)
+      require("lspconfig")[server_name].setup {
+        on_attach = function()
+          require("fmiguel.keybinds").set_lsp_keybinds()
+        end,
+        capabilities = capabilities,
+      }
+    end,
+  }
 end
 
 function setup_dap(servers)
@@ -59,6 +53,14 @@ function setup_dap(servers)
     ensure_installed = servers,
     automatic_setup = true,
   }
+end
+
+function setup()
+  require"mason".setup {
+      PATH = "prepend",
+  }
+  setup_lsp(lsp_servers)
+  setup_dap(dap_servers)
 end
 
 return {
