@@ -43,6 +43,8 @@ local keybinds = require("fmiguel.keybinds")
 keybinds.set_general_keybinds()
 keybinds.set_dap_keybinds()
 
+require"fmiguel.rooter"
+
 -- remove trailing spaces on save so I can sleep well at night
 vim.api.nvim_create_autocmd({"BufWritePre"}, {
   pattern = {"*"},
