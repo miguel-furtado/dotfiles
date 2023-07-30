@@ -6,17 +6,11 @@ alias dbox="distrobox"
 alias ls='ls --color=auto'
 alias grep='grep --color'
 
-
-if [ $DISTRO = "ubuntu" ]; then
+if [[ $DISTRO_FAMILY = "debian" || $DISTRO = "debian" ]]; then
     alias bat="batcat"
 fi
 
-if [ $TERM = "xterm-kitty" ] && [ -z "${DISTROBOX_ENTER_PATH}" ]; then
+if [[ $TERM = "xterm-kitty" ]]; then
     alias ssh="kitty +kitten ssh"
-fi
-
-command -v flashfetch > /dev/null
-if [ $? -eq 0 ]; then
-    alias neofetch="flashfetch"
 fi
 
