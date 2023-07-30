@@ -1,18 +1,15 @@
 add_newline = false
 format = """
-$container\
 $directory\
 $git_branch\
 $line_break\
 $status\
+$container\
 $character\
 """
 
 [line_break]
 disabled = true
-
-[sudo]
-disabled = false
 
 [directory]
 truncation_length = 1
@@ -21,4 +18,5 @@ truncation_length = 1
 format = '[$symbol$branch(:$remote_branch)]($style) '
 
 [container]
-format = '[$symbol]($style) '
+symbol = '*'
+format = '[$symbol](green)'
