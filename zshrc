@@ -17,7 +17,7 @@ setopt hist_verify            # show command with history expansion to user befo
 setopt share_history          # share command history data betwenn sessions
 
 # Load aliases
-. ~/.zsh/aliases.zsh
+. $HOME/.zsh/aliases.zsh
 
 # enable vim mode
 bindkey -v
@@ -29,7 +29,7 @@ if [ "$DISTRO" = "ubuntu" ]; then
 fi
 
 # Better completion settings copied from oh-my-zsh
-. ~/.zsh/completion.zsh
+. $HOME/.zsh/completion.zsh
 
 # zsh-autosuggestions
 auto_sugg_path="$HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh"
