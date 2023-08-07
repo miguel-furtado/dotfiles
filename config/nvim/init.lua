@@ -2,7 +2,6 @@ vim.g.mapleader = " "
 vim.o.termguicolors = true
 vim.o.number = true
 vim.o.relativenumber = true
-vim.o.cul = true -- highlight current line
 vim.o.hlsearch=false
 vim.wo.wrap = false
 vim.o.spell = true
