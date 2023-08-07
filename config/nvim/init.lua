@@ -34,7 +34,10 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup("fmiguel.plugins", {
   defaults = {
     lazy = true,
-  }
+  },
+  change_detection = {
+    enabled = false,
+  },
 })
 
 require("fmiguel.colors")
