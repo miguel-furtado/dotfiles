@@ -44,7 +44,6 @@ require("lazy").setup("fmiguel.plugins", {
 require("fmiguel.colors")
 local keybinds = require("fmiguel.keybinds")
 keybinds.set_general_keybinds()
-keybinds.set_dap_keybinds()
 
 require"fmiguel.rooter"
 
@@ -59,9 +58,8 @@ vim.api.nvim_create_autocmd({"TextYankPost"}, {
   pattern = {"*"},
   callback = function()
     vim.highlight.on_yank {
-      higroup=(vim.fn["hlexists"]("Highlightedya--Region") > 0 and "HighlightedyankRegion" or "IncSearch"),
-      timeout=500
+      timeout=500,
     }
-	end
+	end,
 })
 

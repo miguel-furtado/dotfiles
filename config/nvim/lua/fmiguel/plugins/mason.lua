@@ -6,7 +6,7 @@ local lsp_servers = {
   "dockerls",
   "html",
   "cssls",
-  "jsonls"
+  "jsonls",
 }
 
 local dap_servers = {
@@ -60,6 +60,7 @@ function setup_dap(servers)
     ensure_installed = servers,
     automatic_setup = true,
   }
+  require("fmiguel.keybinds").set_lsp_keybinds()
 end
 
 function setup()
