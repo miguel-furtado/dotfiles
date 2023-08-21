@@ -11,6 +11,7 @@ vim.opt.swapfile = false
 vim.o.encoding = "UTF-8"
 vim.opt.scrolloff = 8
 vim.g.netrw_banner = 0
+vim.g.netrw_bufsettings = "nomod nu nobl nowrap ro"
 
 -- tabs and indentation
 vim.o.tabstop = 4
