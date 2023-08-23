@@ -33,7 +33,6 @@ end
 vim.opt.rtp:prepend(lazypath)
 require("lazy").setup("fmiguel.plugins", {
   defaults = {
-    lazy = true,
     version = "^10",
   },
   change_detection = {

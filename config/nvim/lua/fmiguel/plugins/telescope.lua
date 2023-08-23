@@ -20,6 +20,7 @@ return {
     "nvim-telescope/telescope.nvim",
     version = "0.x.x",
     config = setup,
+    lazy = true,
     dependencies = {
       {"nvim-telescope/telescope-fzf-native.nvim", build = "make" },
     },

@@ -60,7 +60,7 @@ function setup_dap(servers)
     ensure_installed = servers,
     automatic_setup = true,
   }
-  require("fmiguel.keybinds").set_lsp_keybinds()
+  require("fmiguel.keybinds").set_dap_keybinds()
 end
 
 function setup()
