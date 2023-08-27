@@ -6,12 +6,12 @@ vim.o.hlsearch=false
 vim.wo.wrap = false
 vim.o.spell = true
 vim.o.mouse = "a" --enable mouse cursor
-vim.opt.showmode = false -- hide default mode indicator because I'm using lualine
 vim.opt.swapfile = false
 vim.o.encoding = "UTF-8"
 vim.opt.scrolloff = 8
 vim.g.netrw_banner = 0
 vim.g.netrw_bufsettings = "nomod nu nobl nowrap ro"
+vim.o.laststatus = 3 -- global status-line
 
 -- tabs and indentation
 vim.o.tabstop = 4
