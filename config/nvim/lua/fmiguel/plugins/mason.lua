@@ -129,10 +129,9 @@ return {
         version = "^3",
         opts = opts_dapui,
       },
-      "theHamsta/nvim-dap-virtual-text", -- inline values
-      -- need this because the mason setup does not include running
-      -- delve with args
       {
+        -- need this because the mason setup does not include running
+        -- delve with args
         "leoluz/nvim-dap-go",
         ft = "go",
         config = function()
