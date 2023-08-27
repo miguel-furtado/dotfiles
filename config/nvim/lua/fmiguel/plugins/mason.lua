@@ -55,11 +55,21 @@ function setup_lsp(servers)
 end
 
 function setup_dap(servers)
-  local dap = require"mason-nvim-dap"
-  dap.setup {
+  local mason_dap, dap, dapui = require"mason-nvim-dap", require"dap"
+  mason_dap.setup {
     ensure_installed = servers,
     automatic_setup = true,
   }
+
+  dap.listeners.after.event_initialized["dapui_config"] = function()
+    require"dapui".open()
+  end
+  dap.listeners.before.event_terminated["dapui_config"] = function()
+    require"dapui".close()
+  end
+  dap.listeners.before.event_exited["dapui_config"] = function()
+    require"dapui".close()
+  end
   require("fmiguel.keybinds").set_dap_keybinds()
 end
 
@@ -70,6 +80,21 @@ function setup()
   setup_lsp(lsp_servers)
   setup_dap(dap_servers)
 end
+
+local opts_dapui = {
+  layouts = {
+    {
+      elements = {
+        {
+          id = "scopes",
+          size = 1,
+        },
+      },
+      position = "left",
+      size = 40,
+    },
+  },
+}
 
 return {
   -- Configurations for Nvim LSP, DAP and Linters
@@ -86,7 +111,7 @@ return {
         version = "0.x.x",
         dependencies = {
           {
-            "neovim/nvim-lspconfig",
+           "neovim/nvim-lspconfig",
             version = "0.x.x",
           },
         },
@@ -102,9 +127,7 @@ return {
       {
         "rcarriga/nvim-dap-ui",
         version = "^3",
-        config = function()
-          require"dapui".setup()
-        end,
+        opts = opts_dapui,
       },
       "theHamsta/nvim-dap-virtual-text", -- inline values
       -- need this because the mason setup does not include running
