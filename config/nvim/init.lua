@@ -41,9 +41,7 @@ require("lazy").setup("fmiguel.plugins", {
 })
 
 require("fmiguel.colors")
-local keybinds = require("fmiguel.keybinds")
-keybinds.set_general_keybinds()
-
+require("fmiguel.keybinds")
 require"fmiguel.rooter"
 
 -- remove trailing spaces on save so I can sleep well at night

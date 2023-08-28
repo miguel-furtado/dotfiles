@@ -3,7 +3,7 @@ local function nmap(keys, action)
   vim.keymap.set("n", keys, action, {silent=true})
 end
 
-function M.set_general_keybinds()
+function set_general_keybinds()
   nmap("<leader>ff", "<cmd>lua require('telescope.builtin').find_files()<CR>")
   nmap("<leader>sw", "<cmd>lua require('telescope.builtin').lsp_workspace_symbols()<CR>")
   nmap("<leader>ss", "<cmd>lua require('telescope.builtin').lsp_document_symbols()<CR>")
@@ -23,7 +23,7 @@ function M.set_general_keybinds()
   nmap("<leader>4", "<cmd>lua require('harpoon.ui').nav_file(4)<CR>")
 end
 
-function M.set_dap_keybinds()
+function set_dap_keybinds()
   nmap("<F5>", ":lua require('dap').continue()<CR>")
   nmap("<F2>", ":lua require('dap').step_over()<CR>")
   nmap("<F3>", ":lua require('dap').step_into()<CR>")
@@ -32,10 +32,9 @@ function M.set_dap_keybinds()
   nmap("<leader>B", ":lua require('dap').toggle_breakpoint()<CR>")
   -- conditional breakpoint
   nmap("<leader>cB", ":lua require('dap').set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>")
-  nmap("<leader>dui", ":lua require('dapui').toggle()<CR>")
 end
 
-function M.set_lsp_keybinds()
+function set_lsp_keybinds()
   -- passing functions references instead of string with command
   -- `buffer 0` means whatever the current buffer is so the shortcuts only
   -- work on files that trigger the lsp
@@ -50,5 +49,13 @@ function M.set_lsp_keybinds()
   nmap("<leader>a", vim.lsp.buf.code_action, {buffer = 0})
 end
 
-return M
+set_general_keybinds()
+
+vim.api.nvim_create_autocmd({"LspAttach"}, {
+  pattern = {"*"},
+  callback = function()
+    set_lsp_keybinds()
+    set_dap_keybinds()
+  end
+})
 

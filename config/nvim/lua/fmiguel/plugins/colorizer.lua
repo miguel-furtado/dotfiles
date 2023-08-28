@@ -1,7 +1,8 @@
 return {
   {
     "norcalli/nvim-colorizer.lua",
-    event = "BufRead",
+    ft = {"html", "css"},
     opts = {"*"},
   },
 }
+

@@ -32,17 +32,9 @@ function setup_lsp(servers)
     ensure_installed = lsp_servers,
   }
 
-  local capabilities = vim.lsp.protocol.make_client_capabilities()
-  capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
-
   require"mason-lspconfig".setup_handlers {
-    function (server_name) -- default handler (optional)
-      require("lspconfig")[server_name].setup {
-        on_attach = function()
-          require("fmiguel.keybinds").set_lsp_keybinds()
-        end,
-        capabilities = capabilities,
-      }
+    function (server_name) -- default handler
+      require("lspconfig")[server_name].setup {}
     end,
   }
 
@@ -55,22 +47,22 @@ function setup_lsp(servers)
 end
 
 function setup_dap(servers)
-  local mason_dap, dap, dapui = require"mason-nvim-dap", require"dap"
-  mason_dap.setup {
+  local dap, widgets = require"dap", require"dap.ui.widgets"
+  require"mason-nvim-dap".setup {
     ensure_installed = servers,
     automatic_setup = true,
   }
 
-  dap.listeners.after.event_initialized["dapui_config"] = function()
-    require"dapui".open()
+  local widget = widgets.sidebar(widgets.scopes)
+  dap.listeners.after.event_initialized["dap"] = function()
+    widget.open()
   end
-  dap.listeners.before.event_terminated["dapui_config"] = function()
-    require"dapui".close()
+  dap.listeners.before.event_terminated["dap"] = function()
+    widget.close()
   end
-  dap.listeners.before.event_exited["dapui_config"] = function()
-    require"dapui".close()
+  dap.listeners.before.event_exited["dap"] = function()
+    widget.close()
   end
-  require("fmiguel.keybinds").set_dap_keybinds()
 end
 
 function setup()
@@ -80,21 +72,6 @@ function setup()
   setup_lsp(lsp_servers)
   setup_dap(dap_servers)
 end
-
-local opts_dapui = {
-  layouts = {
-    {
-      elements = {
-        {
-          id = "scopes",
-          size = 1,
-        },
-      },
-      position = "left",
-      size = 40,
-    },
-  },
-}
 
 return {
   -- Configurations for Nvim LSP, DAP and Linters
@@ -123,11 +100,6 @@ return {
           "mfussenegger/nvim-dap",
           version = "0.x.x",
         },
-      },
-      {
-        "rcarriga/nvim-dap-ui",
-        version = "^3",
-        opts = opts_dapui,
       },
       {
         -- need this because the mason setup does not include running
