@@ -4,17 +4,20 @@ local function nmap(keys, action)
 end
 
 function set_general_keybinds()
+  -- general
+  nmap("<leader>w", "<cmd>lua vim.cmd('w')<CR>")
+  nmap("<leader>ee", "<cmd>lua vim.diagnostic.open_float()<CR>")
+  nmap("<leader>E", "<cmd>lua vim.cmd('Ex')<CR>")
+
+  -- telescope
   nmap("<leader>ff", "<cmd>lua require('telescope.builtin').find_files()<CR>")
   nmap("<leader>sw", "<cmd>lua require('telescope.builtin').lsp_workspace_symbols()<CR>")
   nmap("<leader>ss", "<cmd>lua require('telescope.builtin').lsp_document_symbols()<CR>")
   nmap("<leader>dg", "<cmd>lua require('telescope.builtin').diagnostics()<CR>")
   nmap("<leader>gg", "<cmd>lua require('telescope.builtin').live_grep()<CR>")
-  nmap("<leader>bb", "<cmd>lua require('telescope.builtin').buffers()<CR>")
+  nmap("<leader>gr", "<cmd>lua require('telescope.builtin').lsp_references()<CR>")
 
-  nmap("<leader>w", "<cmd>lua vim.cmd('w')<CR>")
-  nmap("<leader>ee", "<cmd>lua vim.diagnostic.open_float()<CR>")
-  nmap("<leader>E", "<cmd>lua vim.cmd('Ex')<CR>")
-
+  -- harpoon
   nmap("<leader>hh", "<cmd>lua require('harpoon.ui').toggle_quick_menu()<CR>")
   nmap("<leader>ha", "<cmd>lua require('harpoon.mark').add_file()<CR>")
   nmap("<leader>1", "<cmd>lua require('harpoon.ui').nav_file(1)<CR>")
@@ -35,18 +38,16 @@ function set_dap_keybinds()
 end
 
 function set_lsp_keybinds()
-  -- passing functions references instead of string with command
   -- `buffer 0` means whatever the current buffer is so the shortcuts only
   -- work on files that trigger the lsp
-  nmap("K", vim.lsp.buf.hover, {buffer = 0})
-  nmap("<leader>gd", vim.lsp.buf.definition, {buffer = 0})
-  nmap("<leader>gt", vim.lsp.buf.type_definition, {buffer = 0})
-  nmap("<leader>gi", vim.lsp.buf.implementation, {buffer = 0})
-  nmap("<leader>gr", "<cmd>:Telescope lsp_references<CR>", {buffer = 0})
-  nmap("<leader>dj", vim.diagnostic.goto_next, {buffer = 0})
-  nmap("<leader>dk", vim.diagnostic.goto_prev, {buffer = 0})
-  nmap("<leader>R", vim.lsp.buf.rename, {buffer = 0})
-  nmap("<leader>a", vim.lsp.buf.code_action, {buffer = 0})
+  nmap("K", vim.lsp.buf.hover)
+  nmap("<leader>gd", vim.lsp.buf.definition)
+  nmap("<leader>gt", vim.lsp.buf.type_definition)
+  nmap("<leader>gi", vim.lsp.buf.implementation)
+  nmap("<leader>dj", vim.diagnostic.goto_next)
+  nmap("<leader>dk", vim.diagnostic.goto_prev)
+  nmap("<leader>R", vim.lsp.buf.rename)
+  nmap("<leader>a", vim.lsp.buf.code_action)
 end
 
 set_general_keybinds()
