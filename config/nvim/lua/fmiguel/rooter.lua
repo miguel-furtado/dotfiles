@@ -1,4 +1,4 @@
--- Array of file names indicating root directory. Modify to your liking.
+-- Files indicating root directory.
 local root_names = {
   ".git",
   ".hg",
@@ -33,6 +33,5 @@ function set_root()
   vim.fn.chdir(root)
 end
 
-local root_augroup = vim.api.nvim_create_augroup('MyAutoRoot', {})
-vim.api.nvim_create_autocmd('BufEnter', { group = root_augroup, callback = set_root })
+vim.api.nvim_create_autocmd('BufEnter', { callback = set_root })
 
