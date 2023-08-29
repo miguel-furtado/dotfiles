@@ -41,7 +41,7 @@ return {
       {
         -- snippets engine
         "L3MON4D3/LuaSnip",
-        version = "^1",
+        version = "^2",
       },
       "saadparwaiz1/cmp_luasnip", -- the luasnip driver for cmp
       "hrsh7th/cmp-buffer", -- words from the curr buffer
