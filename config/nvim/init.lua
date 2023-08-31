@@ -43,7 +43,6 @@ require"lazy".setup("fmiguel.plugins", {
 
 require"fmiguel.colors"
 require"fmiguel.keybinds"
-require"fmiguel.rooter"
 
 -- Remove trailing spaces on save
 vim.api.nvim_create_autocmd("BufWritePre", {
