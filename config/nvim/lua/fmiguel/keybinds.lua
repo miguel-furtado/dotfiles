@@ -1,4 +1,3 @@
-local M = {}
 local function nmap(keys, action)
   vim.keymap.set("n", keys, action, {silent=true})
 end
