@@ -28,9 +28,6 @@ if [ "$DISTRO" = "ubuntu" ]; then
     . /etc/zsh_command_not_found
 fi
 
-# Better completion settings copied from oh-my-zsh
-. $HOME/.zsh/completion.zsh
-
 # zsh-autosuggestions
 auto_sugg_path="$HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh"
 if [ -f $auto_sugg_path ]; then
