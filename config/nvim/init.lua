@@ -9,6 +9,7 @@ vim.o.laststatus = 3 -- global status-line
 vim.o.hlsearch=false
 vim.opt.scrolloff = 8
 vim.opt.swapfile = false
+vim.opt.undofile = true
 vim.wo.wrap = false
 
 -- Netrw
@@ -32,6 +33,7 @@ if not vim.loop.fs_stat(lazypath) then
     lazypath,
   })
 end
+
 vim.opt.rtp:prepend(lazypath)
 require"lazy".setup("fmiguel.plugins", {
   defaults = {

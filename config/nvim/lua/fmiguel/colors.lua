@@ -1,13 +1,15 @@
-local handle = io.popen("gdbus call --session"
-.. " --dest=org.freedesktop.portal.Desktop"
-.. " --object-path=/org/freedesktop/portal/desktop"
-.. " --method=org.freedesktop.portal.Settings.Read"
-.. " org.freedesktop.appearance color-scheme")
+if vim.loop.os_uname().sysname == "Linux" then
+  local handle = io.popen("gdbus call --session"
+  .. " --dest=org.freedesktop.portal.Desktop"
+  .. " --object-path=/org/freedesktop/portal/desktop"
+  .. " --method=org.freedesktop.portal.Settings.Read"
+  .. " org.freedesktop.appearance color-scheme")
 
-if string.match(handle:read('*a'), ' %d') == " 1" then
-  vim.o.background = "dark"
-else
-  vim.o.background = "light"
+  if string.match(handle:read('*a'), ' %d') == " 1" then
+    vim.o.background = "dark"
+  else
+    vim.o.background = "light"
+  end
 end
 
 function set_theme()
