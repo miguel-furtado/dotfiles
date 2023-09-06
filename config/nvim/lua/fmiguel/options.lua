@@ -7,6 +7,7 @@ vim.o.mouse = "a" --enable mouse cursor
 vim.o.encoding = "UTF-8"
 vim.o.laststatus = 3 -- global status-line
 vim.o.hlsearch=false
+vim.o.laststatus = 0
 vim.opt.scrolloff = 8
 vim.opt.swapfile = false
 vim.opt.undofile = true
