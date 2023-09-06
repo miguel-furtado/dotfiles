@@ -4,8 +4,7 @@ return {
     event = "InsertEnter",
     dependencies = {
       {
-        -- snippets engine
-        "L3MON4D3/LuaSnip",
+        "L3MON4D3/LuaSnip", -- snippets engine
         version = "^2",
       },
       "saadparwaiz1/cmp_luasnip", -- the luasnip driver for cmp

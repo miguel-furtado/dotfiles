@@ -4,7 +4,6 @@ if vim.loop.os_uname().sysname == "Linux" then
   .. " --object-path=/org/freedesktop/portal/desktop"
   .. " --method=org.freedesktop.portal.Settings.Read"
   .. " org.freedesktop.appearance color-scheme")
-
   if string.match(handle:read('*a'), ' %d') == " 1" then
     vim.o.background = "dark"
   else
@@ -14,10 +13,10 @@ end
 
 function set_theme()
   if vim.o.background == "dark" then
-    vim.cmd(string.format("colorscheme %s", "carbonfox"))
+    vim.cmd("colorscheme carbonfox")
     return
   end
-  vim.cmd(string.format("colorscheme %s", "dawnfox"))
+  vim.cmd("colorscheme dawnfox")
 end
 
 set_theme()
