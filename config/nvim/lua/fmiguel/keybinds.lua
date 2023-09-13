@@ -3,28 +3,30 @@ local function nmap(keys, action)
 end
 
 -- general
-nmap("<leader>w", "<cmd>lua vim.cmd('w')<CR>")
-nmap("<leader>ee", "<cmd>lua vim.diagnostic.open_float()<CR>")
-nmap("<leader>E", "<cmd>lua vim.cmd('Ex')<CR>")
+nmap("<leader>w", function() vim.cmd("w") end)
+nmap("<leader>ee", vim.diagnostic.open_float)
+nmap("<leader>E", function() vim.cmd("Ex") end)
 
 -- telescope
-nmap("<leader>ff", "<cmd>lua require('telescope.builtin').find_files()<CR>")
-nmap("<leader>sw", "<cmd>lua require('telescope.builtin').lsp_workspace_symbols()<CR>")
-nmap("<leader>ss", "<cmd>lua require('telescope.builtin').lsp_document_symbols()<CR>")
-nmap("<leader>dg", "<cmd>lua require('telescope.builtin').diagnostics()<CR>")
-nmap("<leader>gg", "<cmd>lua require('telescope.builtin').live_grep()<CR>")
-nmap("<leader>gr", "<cmd>lua require('telescope.builtin').lsp_references()<CR>")
+local telescope = require"telescope.builtin"
+nmap("<leader>ff", telescope.find_files)
+nmap("<leader>sw", telescope.lsp_workspace_symbols)
+nmap("<leader>ss", telescope.lsp_document_symbols)
+nmap("<leader>dg", telescope.diagnostics)
+nmap("<leader>gg", telescope.live_grep)
+nmap("<leader>gr", telescope.lsp_references)
 
 -- harpoon
-nmap("<leader>hh", "<cmd>lua require('harpoon.ui').toggle_quick_menu()<CR>")
-nmap("<leader>ha", "<cmd>lua require('harpoon.mark').add_file()<CR>")
-nmap("<leader>1", "<cmd>lua require('harpoon.ui').nav_file(1)<CR>")
-nmap("<leader>2", "<cmd>lua require('harpoon.ui').nav_file(2)<CR>")
-nmap("<leader>3", "<cmd>lua require('harpoon.ui').nav_file(3)<CR>")
-nmap("<leader>4", "<cmd>lua require('harpoon.ui').nav_file(4)<CR>")
+local harpoon_ui = require"harpoon.ui"
+nmap("<leader>ha", require"harpoon.mark".add_file)
+nmap("<leader>hh", harpoon_ui.toggle_quick_menu)
+nmap("<leader>1", function() harpoon_ui.nav_file(1) end)
+nmap("<leader>2", function() harpoon_ui.nav_file(2) end)
+nmap("<leader>3", function() harpoon_ui.nav_file(3) end)
+nmap("<leader>4", function() harpoon_ui.nav_file(4) end)
 
 -- only set when an lsp is attached
-vim.api.nvim_create_autocmd({"LspAttach"}, {
+vim.api.nvim_create_autocmd("LspAttach", {
   pattern = {"*"},
   callback = function()
     nmap("K", vim.lsp.buf.hover)
