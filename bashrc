@@ -3,10 +3,10 @@ export EDITOR="nvim"
 export DISTRO=$(grep "^ID=" /etc/os-release | cut -d = -f 2)
 export DISTRO_FAMILY=$(grep "^ID_LIKE=" /etc/os-release | cut -d = -f 2)
 
-export XDG_DATA_HOME=$HOME/.local/share/ \
-    XDG_CONFIG_HOME=$HOME/.config/ \
-    XDG_STATE_HOME=$HOME/.local/state/ \
-    XDG_CACHE_HOME=$HOME/.cache/
+export XDG_DATA_HOME=$HOME/.local/share \
+    XDG_CONFIG_HOME=$HOME/.config \
+    XDG_STATE_HOME=$HOME/.local/state \
+    XDG_CACHE_HOME=$HOME/.cache
 
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
@@ -19,7 +19,7 @@ shopt -s histappend
 HISTSIZE=50000
 # expand history before running the command
 shopt -s histverify
-HISTFILE=$XDG_STATE_HOME/bash/history
+HISTFILE=$HOME/.bash_history
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
