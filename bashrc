@@ -12,7 +12,7 @@ export XDG_DATA_HOME=$HOME/.local/share \
 [ -z "$PS1" ] && return
 
 # don't put duplicate lines or lines starting with space in the history.
-HISTCONTROL=ignoreboth
+HISTCONTROL=ignorespace:erasedups
 # append to the history file, don't overwrite it
 shopt -s histappend
 # number of commands to remember
