@@ -11,6 +11,7 @@
     ~/.zshrc: zshrc
     ~/.zshenv: zshenv
     ~/.zsh: zsh
+    ~/.gitconfig: gitconfig
     ~/.config/nvim: config/nvim
     ~/.config/starship.toml: config/starship.toml
     ~/.config/chameleon: config/chameleon
