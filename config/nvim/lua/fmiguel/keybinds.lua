@@ -4,7 +4,6 @@ end
 
 -- general
 nmap("<leader>w", function() vim.cmd("w") end)
-nmap("<leader>ee", vim.diagnostic.open_float)
 nmap("<leader>E", function() vim.cmd("Ex") end)
 
 -- harpoon
@@ -24,6 +23,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
     nmap("<leader>gd", vim.lsp.buf.definition)
     nmap("<leader>gt", vim.lsp.buf.type_definition)
     nmap("<leader>gi", vim.lsp.buf.implementation)
+    nmap("<leader>ee", vim.diagnostic.open_float)
     nmap("<leader>dj", vim.diagnostic.goto_next)
     nmap("<leader>dk", vim.diagnostic.goto_prev)
     nmap("<leader>R", vim.lsp.buf.rename)

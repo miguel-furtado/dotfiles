@@ -94,26 +94,23 @@ local server_opts = {
   },
 }
 
-function start_lsp(opts)
-  -- nvim-cmp supports additional completion capabilities, so broadcast that to servers
-  local capabilities = vim.lsp.protocol.make_client_capabilities()
-  capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
+-- nvim-cmp supports additional completion capabilities, so broadcast that to servers
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 
-  vim.lsp.start({
-    name = opts.name,
-    cmd = opts.cmd,
-    root_dir = vim.fs.dirname(vim.fs.find(opts.root_dir, {upward = true })[1]),
-    capabilities = capabilities,
-    detached = false,
-  })
-end
-
-for _, opt in ipairs(server_opts) do
+for _, opts in ipairs(server_opts) do
   vim.api.nvim_create_autocmd("FileType", {
-    pattern = opt.ft,
+    pattern = opts.ft,
     callback = function()
-      opt["ft"] = nil
-      start_lsp(opt)
+      opts["ft"] = nil
+
+      vim.lsp.start({
+        name = opts.name,
+        cmd = opts.cmd,
+        root_dir = vim.fs.dirname(vim.fs.find(opts.root_dir, {upward = true })[1]),
+        capabilities = capabilities,
+        detached = false,
+      })
     end,
   })
 end

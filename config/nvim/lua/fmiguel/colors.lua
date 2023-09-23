@@ -9,6 +9,7 @@ if vim.loop.os_uname().sysname == "Linux" then
   else
     vim.o.background = "light"
   end
+  handle:close()
 end
 
 function set_theme()

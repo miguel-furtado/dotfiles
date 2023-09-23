@@ -1,3 +1,0 @@
-return {
-  { 'nvim-lua/plenary.nvim', version = "0.x.x", lazy = true },
-}
