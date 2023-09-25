@@ -1,4 +1,4 @@
-export PATH=$HOME/.local/bin:$PATH
+export PATH=$HOME/.local/bin:$HOME/go/bin:$PATH
 export EDITOR="nvim"
 export DISTRO=$(grep "^ID=" /etc/os-release | cut -d = -f 2)
 export DISTRO_FAMILY=$(grep "^ID_LIKE=" /etc/os-release | cut -d = -f 2)
