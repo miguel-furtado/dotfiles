@@ -51,6 +51,6 @@ fi
 # zoxide
 command -v "zoxide" &> /dev/null
 if [ $? -eq 0 ]; then
-    eval "$(zoxide init zsh)"
+    eval "$(zoxide init bash)"
 fi
 
