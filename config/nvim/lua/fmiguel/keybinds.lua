@@ -6,6 +6,15 @@ end
 nmap("<leader>w", function() vim.cmd("w") end)
 nmap("<leader>E", function() vim.cmd("Ex") end)
 
+-- telescope
+local telescope = require"telescope.builtin"
+nmap("<leader>ff", telescope.find_files)
+nmap("<leader>sw", telescope.lsp_workspace_symbols)
+nmap("<leader>ss", telescope.lsp_document_symbols)
+nmap("<leader>dg", telescope.diagnostics)
+nmap("<leader>gg", telescope.live_grep)
+nmap("<leader>gr", telescope.lsp_references)
+
 -- harpoon
 local harpoon_ui = require"harpoon.ui"
 nmap("<leader>ha", require"harpoon.mark".add_file)
