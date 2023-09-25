@@ -36,7 +36,11 @@ set -o vi
 . "$HOME/.cargo/env"
 
 # asdf
-. $HOME/.asdf/asdf.sh
+asdf_path=$HOME/.asdf/asdf.sh
+if [ -d $asdf_path ]; then
+    . asdf_path
+fi
+
 
 # starship prompt
 command -v "starship" &> /dev/null
