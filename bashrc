@@ -33,7 +33,10 @@ fi
 # vi keybindings
 set -o vi
 
-. "$HOME/.cargo/env"
+cargo_env="$HOME/.cargo/env"
+if [ -f $cargo_env ]; then
+    . $cargo_env
+fi
 
 # asdf
 asdf_path=$HOME/.asdf/asdf.sh
