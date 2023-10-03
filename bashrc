@@ -1,3 +1,8 @@
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+	. /etc/bashrc
+fi
+
 export PATH=$HOME/.local/bin:$HOME/go/bin:$PATH
 export EDITOR="nvim"
 export DISTRO=$(grep "^ID=" /etc/os-release | cut -d = -f 2)
