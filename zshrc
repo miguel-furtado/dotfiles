@@ -35,9 +35,9 @@ if [ "$DISTRO" = "ubuntu" ]; then
 fi
 
 # zsh-autosuggestions
-auto_sugg_path="$HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh"
-if [ -f $auto_sugg_path ]; then
-    . $auto_sugg_path
+autosugg_path=/usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+if [ -f $autosugg_path ]; then
+    . $autosugg_path
 fi
 
 # asdf
