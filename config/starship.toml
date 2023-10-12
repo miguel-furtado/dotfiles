@@ -4,7 +4,6 @@ $directory\
 $git_branch\
 $line_break\
 $status\
-$container\
 $character\
 """
 
@@ -16,7 +15,3 @@ truncation_length = 1
 
 [git_branch]
 format = '[$symbol$branch(:$remote_branch)]($style) '
-
-[container]
-symbol = '*'
-format = '[$symbol](green)'
