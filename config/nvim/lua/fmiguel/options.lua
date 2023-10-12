@@ -1,3 +1,4 @@
+vim.o.guicursor="n-v-c-i:block"
 vim.g.mapleader = " "
 vim.o.termguicolors = true
 vim.o.number = true
