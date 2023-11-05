@@ -11,7 +11,6 @@ vim.o.hlsearch=false
 vim.o.laststatus = 0
 vim.opt.scrolloff = 8
 vim.opt.swapfile = false
-vim.opt.undofile = true
 vim.wo.wrap = false
 
 -- Netrw
