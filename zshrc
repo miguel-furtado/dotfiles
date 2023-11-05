@@ -1,11 +1,3 @@
-# Source global definitions
-if [ -f /etc/zsh/zshenv ]; then
-	. /etc/zsh/zshenv
-fi
-if [ -f /etc/zsh/zshrc ]; then
-	. /etc/zsh/zshrc
-fi
-
 export PATH=$HOME/.local/bin:$HOME/go/bin:$PATH
 export EDITOR="nvim"
 export DISTRO=$(grep "^ID=" /etc/os-release | cut -d = -f 2)
