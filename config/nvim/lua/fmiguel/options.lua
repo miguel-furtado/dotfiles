@@ -11,7 +11,10 @@ vim.o.hlsearch=false
 vim.o.laststatus = 0
 vim.opt.scrolloff = 8
 vim.opt.swapfile = false
-vim.wo.wrap = false
+
+-- Show ghost chars for some characters like tab an leading space.
+vim.opt.list = true
+vim.opt.listchars:append({ lead = "."})
 
 -- Netrw
 vim.g.netrw_banner = 0
@@ -22,4 +25,6 @@ vim.o.tabstop = 4
 vim.o.shiftwidth = 4
 vim.o.expandtab = true
 vim.o.smartindent = true
+
+vim.wo.wrap = false
 
