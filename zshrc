@@ -28,9 +28,9 @@ zshaddhistory() { whence ${${(z)1}[1]} >| /dev/null || return 1 }
 # enable vim mode
 bindkey -v
 
-if [ "$DISTRO" = "ubuntu" ]; then
-    # Get ubuntu suggestions on the package to install to provide a command which
-    # was not found
+# Ubuntu's command not found package provides instructions to install the
+# package that provides the command in case it was not found.
+if [ "$DISTRO" = "ubuntu" ] && [ -f /etc/zsh_command_not_found ]; then
     . /etc/zsh_command_not_found
 fi
 
