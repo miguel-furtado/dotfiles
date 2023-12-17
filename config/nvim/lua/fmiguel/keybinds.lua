@@ -15,14 +15,13 @@ nmap("<leader>dg", telescope.diagnostics)
 nmap("<leader>gg", telescope.live_grep)
 nmap("<leader>gr", telescope.lsp_references)
 
--- harpoon
-local harpoon_ui = require"harpoon.ui"
-nmap("<leader>ha", require"harpoon.mark".add_file)
-nmap("<leader>hh", harpoon_ui.toggle_quick_menu)
-nmap("<C-h>", function() harpoon_ui.nav_file(1) end)
-nmap("<C-j>", function() harpoon_ui.nav_file(2) end)
-nmap("<C-k>", function() harpoon_ui.nav_file(3) end)
-nmap("<C-l>", function() harpoon_ui.nav_file(4) end)
+local harpoon = require("harpoon")
+nmap("<leader>ha", function() harpoon:list():append() end)
+nmap("<leader>hh", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
+nmap("<C-h>", function() harpoon:list():select(1) end)
+nmap("<C-j>", function() harpoon:list():select(2) end)
+nmap("<C-k>", function() harpoon:list():select(3) end)
+nmap("<C-l>", function() harpoon:list():select(4) end)
 
 -- only set when an lsp is attached
 vim.api.nvim_create_autocmd("LspAttach", {
