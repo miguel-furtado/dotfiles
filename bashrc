@@ -3,12 +3,12 @@ if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
 
-export PATH=$HOME/.local/bin:$HOME/go/bin:$PATH
-export EDITOR="nvim"
-export DISTRO=$(grep "^ID=" /etc/os-release | cut -d = -f 2)
-export DISTRO_FAMILY=$(grep "^ID_LIKE=" /etc/os-release | cut -d = -f 2)
-
-export XDG_DATA_HOME=$HOME/.local/share \
+export \
+    PATH=$HOME/.local/bin:$HOME/go/bin:$PATH \
+    EDITOR="nvim" \
+    DISTRO=$(grep "^ID=" /etc/os-release | cut -d = -f 2) \
+    DISTRO_FAMILY=$(grep "^ID_LIKE=" /etc/os-release | cut -d = -f 2) \
+    XDG_DATA_HOME=$HOME/.local/share \
     XDG_CONFIG_HOME=$HOME/.config \
     XDG_STATE_HOME=$HOME/.local/state \
     XDG_CACHE_HOME=$HOME/.cache
@@ -32,7 +32,7 @@ shopt -s checkwinsize
 
 # Alias definitions.
 if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
+    . "$HOME/.bash_aliases"
 fi
 
 # vi keybindings
