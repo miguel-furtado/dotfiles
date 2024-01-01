@@ -29,6 +29,23 @@ return {
           capabilities = capabilities,
         }
       end
+
+      -- Attach keybinds only when an lsp is attached
+      vim.api.nvim_create_autocmd("LspAttach", {
+        pattern = {"*"},
+        callback = function()
+          vim.keymap.set("n", "K", vim.lsp.buf.hover)
+          vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition)
+          vim.keymap.set("n", "<leader>gt", vim.lsp.buf.type_definition)
+          vim.keymap.set("n", "<leader>gi", vim.lsp.buf.implementation)
+          vim.keymap.set("n", "<leader>ee", vim.diagnostic.open_float)
+          vim.keymap.set("n", "<leader>dj", vim.diagnostic.goto_next)
+          vim.keymap.set("n", "<leader>dk", vim.diagnostic.goto_prev)
+          vim.keymap.set("n", "<leader>R", vim.lsp.buf.rename)
+          vim.keymap.set("n", "<leader>a", vim.lsp.buf.code_action)
+        end
+      })
     end,
   },
 }
+
