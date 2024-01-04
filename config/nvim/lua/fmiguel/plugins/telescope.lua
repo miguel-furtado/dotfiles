@@ -18,7 +18,6 @@ return {
     telescope.setup {
       defaults = {
         file_ignore_patterns = {"^.git/", "^lib/", "^bin/", "^__pycache__/", "^node_modules/"},
-        prompt_prefix = "❯ ",
       },
       pickers = {
         find_files = { hidden = true },
