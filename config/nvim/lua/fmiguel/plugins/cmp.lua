@@ -43,21 +43,19 @@ function config_cmp()
 end
 
 return {
-  {
-    "hrsh7th/nvim-cmp", -- the completion engine
-    dependencies = {
-      {
-        "L3MON4D3/LuaSnip", -- snippets engine
-        version = "^2",
-        config = config_luasnip,
-      },
-      "saadparwaiz1/cmp_luasnip", -- the luasnip driver for cmp
-      "hrsh7th/cmp-buffer", -- words from the curr buffer
-      "hrsh7th/cmp-path", -- path auto-completion
-      "hrsh7th/cmp-nvim-lsp",
-      "rafamadriz/friendly-snippets", -- a bunch of preconfigured snippets for various languages
+  "hrsh7th/nvim-cmp", -- the completion engine
+  dependencies = {
+    {
+      "L3MON4D3/LuaSnip", -- snippets engine
+      version = "^2",
+      config = config_luasnip,
     },
-    config = config_cmp,
+    "saadparwaiz1/cmp_luasnip", -- the luasnip driver for cmp
+    "hrsh7th/cmp-buffer", -- words from the curr buffer
+    "hrsh7th/cmp-path", -- path auto-completion
+    "hrsh7th/cmp-nvim-lsp",
+    "rafamadriz/friendly-snippets", -- a bunch of preconfigured snippets for various languages
   },
+  config = config_cmp,
 }
 

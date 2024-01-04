@@ -10,42 +10,40 @@ local servers = {
 }
 
 return {
-  {
-    "neovim/nvim-lspconfig",
-    config = function()
-      -- Disable inline error messages
-      vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
+  "neovim/nvim-lspconfig",
+  config = function()
+    -- Disable inline error messages
+    vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
       vim.lsp.diagnostic.on_publish_diagnostics, {
         virtual_text = false,
       })
 
-      -- Broadcast snippet capability for completion
-      local capabilities = vim.lsp.protocol.make_client_capabilities()
-      capabilities.textDocument.completion.completionItem.snippetSupport = true
+    -- Broadcast snippet capability for completion
+    local capabilities = vim.lsp.protocol.make_client_capabilities()
+    capabilities.textDocument.completion.completionItem.snippetSupport = true
 
-      local lspconfig = require("lspconfig")
-      for _, server  in ipairs(servers) do
-        lspconfig[server].setup {
-          capabilities = capabilities,
-        }
+    local lspconfig = require("lspconfig")
+    for _, server  in ipairs(servers) do
+      lspconfig[server].setup {
+        capabilities = capabilities,
+      }
+    end
+
+    -- Attach keybinds only when an lsp is attached
+    vim.api.nvim_create_autocmd("LspAttach", {
+      pattern = {"*"},
+      callback = function()
+        vim.keymap.set("n", "K", vim.lsp.buf.hover)
+        vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition)
+        vim.keymap.set("n", "<leader>gt", vim.lsp.buf.type_definition)
+        vim.keymap.set("n", "<leader>gi", vim.lsp.buf.implementation)
+        vim.keymap.set("n", "<leader>ee", vim.diagnostic.open_float)
+        vim.keymap.set("n", "<leader>dj", vim.diagnostic.goto_next)
+        vim.keymap.set("n", "<leader>dk", vim.diagnostic.goto_prev)
+        vim.keymap.set("n", "<leader>R", vim.lsp.buf.rename)
+        vim.keymap.set("n", "<leader>a", vim.lsp.buf.code_action)
       end
-
-      -- Attach keybinds only when an lsp is attached
-      vim.api.nvim_create_autocmd("LspAttach", {
-        pattern = {"*"},
-        callback = function()
-          vim.keymap.set("n", "K", vim.lsp.buf.hover)
-          vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition)
-          vim.keymap.set("n", "<leader>gt", vim.lsp.buf.type_definition)
-          vim.keymap.set("n", "<leader>gi", vim.lsp.buf.implementation)
-          vim.keymap.set("n", "<leader>ee", vim.diagnostic.open_float)
-          vim.keymap.set("n", "<leader>dj", vim.diagnostic.goto_next)
-          vim.keymap.set("n", "<leader>dk", vim.diagnostic.goto_prev)
-          vim.keymap.set("n", "<leader>R", vim.lsp.buf.rename)
-          vim.keymap.set("n", "<leader>a", vim.lsp.buf.code_action)
-        end
-      })
-    end,
-  },
+    })
+  end,
 }
 
