@@ -26,7 +26,6 @@ vim.o.expandtab = true
 vim.wo.wrap = false
 
 vim.g.mapleader = " "
-
 vim.keymap.set("n", "<leader>w", function() vim.cmd("w") end, {silent=true})
 vim.keymap.set("n", "<leader>E", function() vim.cmd("Ex") end, {silent=true})
 

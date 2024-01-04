@@ -21,9 +21,7 @@ return {
         prompt_prefix = "❯ ",
       },
       pickers = {
-        find_files = {
-          hidden = true,
-        },
+        find_files = { hidden = true },
       },
     }
     telescope.load_extension("fzf")
