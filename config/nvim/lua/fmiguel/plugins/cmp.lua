@@ -12,7 +12,6 @@ end
 
 function config_cmp()
   require("luasnip.loaders.from_vscode").lazy_load() --friendly-snippets
-  require("luasnip.loaders.from_snipmate").lazy_load() -- custom snippets in ./snippets
 
   local cmp = require("cmp")
   cmp.setup({
