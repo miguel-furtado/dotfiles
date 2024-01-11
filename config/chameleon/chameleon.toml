@@ -1,17 +1,7 @@
 [[targets]]
-name = "kitty"
-light = "Custom Light"
-dark = "Custom Dark"
-
-[[targets]]
 name = "bat"
 light = "Monokai Extended Light"
 dark = "Monokai Extended"
-
-[[targets]]
-name = "alacritty"
-light = "Alabaster"
-dark = "Campbell"
 
 [[targets]]
 # specify the neovim theme in the neovim config
