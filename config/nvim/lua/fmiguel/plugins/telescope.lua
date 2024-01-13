@@ -3,7 +3,8 @@ return {
   version = "0.x.x",
   dependencies = {
     {"nvim-telescope/telescope-fzf-native.nvim", build = "make" },
-    { 'nvim-lua/plenary.nvim', version = "0.x.x"},
+    "pleanary",
+    "devicons",
   },
   keys = {
     { "<leader>ff", function() require("telescope.builtin").find_files() end },
