@@ -1,7 +1,6 @@
 return {
   "ThePrimeagen/harpoon",
   branch = "harpoon2",
-  dependencies = { "plenary" },
   keys = {
     { "<leader>ha", function() require"harpoon":list():append() end },
     { "<leader>hh", function() require"harpoon".ui:toggle_quick_menu(require"harpoon":list()) end },
