@@ -11,12 +11,8 @@
     ~/.zshrc: zshrc
     ~/.zshenv: zshenv
     ~/.zsh: zsh
-    ~/.gitconfig: gitconfig
     ~/.config/nvim: config/nvim
     ~/.config/starship.toml: config/starship.toml
     ~/.config/chameleon: config/chameleon
     ~/.config/tealdeer: config/tealdeer
-    ~/.config/tmux: config/tmux
-    ~/.config/kitty: config/kitty
-    ~/.config/alacritty: config/alacritty
 
