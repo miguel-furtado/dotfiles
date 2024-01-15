@@ -9,6 +9,7 @@ vim.o.hlsearch=false
 vim.o.laststatus = 0
 vim.opt.scrolloff = 8
 vim.opt.swapfile = false
+vim.opt.cindent = true
 
 -- Show ghost chars for some characters like tab an leading space.
 vim.opt.list = true
