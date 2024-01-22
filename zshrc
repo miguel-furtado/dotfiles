@@ -25,8 +25,11 @@ zshaddhistory() { whence ${${(z)1}[1]} >| /dev/null || return 1 }
 # Load aliases
 . $HOME/.zsh/aliases.zsh
 
-# enable vim mode
+# Enable vim mode
 bindkey -v
+
+# Bind history search
+bindkey '^R' history-incremental-search-backward
 
 # Ubuntu's command not found package provides instructions to install the
 # package that provides the command in case it was not found.
