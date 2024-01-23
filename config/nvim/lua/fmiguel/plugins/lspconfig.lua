@@ -44,8 +44,8 @@ return {
         vim.keymap.set("n", "<leader>a", vim.lsp.buf.code_action)
         vim.keymap.set("n", "<leader>ff", vim.lsp.buf.format)
         vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references)
-        vim.keymap.set("n", "<leader>sw", vim.lsp.buf.workspace_symbol)
-        -- figure out vim.lsp.buf.document_symbol
+        vim.keymap.set("n", "<leader>ss", vim.lsp.buf.document_symbol)
+        -- figure out vim.lsp.buf.workspace_symbol
       end
     })
   end,
