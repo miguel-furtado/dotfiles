@@ -37,12 +37,6 @@ if [ "$DISTRO" = "ubuntu" ] && [ -f /etc/zsh_command_not_found ]; then
     . /etc/zsh_command_not_found
 fi
 
-# zsh-autosuggestions
-autosugg_path=/usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-if [ -f $autosugg_path ]; then
-    . $autosugg_path
-fi
-
 # asdf
 asdf_path=$HOME/.asdf/asdf.sh
 if [ -d $asdf_path ]; then
