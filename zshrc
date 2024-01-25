@@ -22,9 +22,6 @@ setopt share_history          # share command history data between sessions
 # Don't save failed commands to history
 zshaddhistory() { whence ${${(z)1}[1]} >| /dev/null || return 1 }
 
-# Load aliases
-. $HOME/.zsh/aliases.zsh
-
 # Enable vim mode
 bindkey -v
 
@@ -43,15 +40,15 @@ if [ -d $asdf_path ]; then
     . asdf_path
 fi
 
-# starship prompt
-command -v "starship" &> /dev/null
-if [ $? -eq 0 ]; then
-    eval "$(starship init zsh)"
-fi
-
 # zoxide
 command -v "zoxide" &> /dev/null
 if [ $? -eq 0 ]; then
     eval "$(zoxide init zsh)"
 fi
+
+# Load aliases
+. $HOME/.zsh/aliases.zsh
+
+# Load Prompt
+. $HOME/.zsh/prompt.zsh
 
