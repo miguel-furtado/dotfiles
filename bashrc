@@ -38,27 +38,3 @@ fi
 # vi keybindings
 set -o vi
 
-cargo_env="$HOME/.cargo/env"
-if [ -f $cargo_env ]; then
-    . $cargo_env
-fi
-
-# asdf
-asdf_path=$HOME/.asdf/asdf.sh
-if [ -d $asdf_path ]; then
-    . asdf_path
-fi
-
-
-# starship prompt
-command -v "starship" &> /dev/null
-if [ $? -eq 0 ]; then
-    eval "$(starship init bash)"
-fi
-
-# zoxide
-command -v "zoxide" &> /dev/null
-if [ $? -eq 0 ]; then
-    eval "$(zoxide init bash)"
-fi
-

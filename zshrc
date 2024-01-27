@@ -34,18 +34,6 @@ if [ "$DISTRO" = "ubuntu" ] && [ -f /etc/zsh_command_not_found ]; then
     . /etc/zsh_command_not_found
 fi
 
-# asdf
-asdf_path=$HOME/.asdf/asdf.sh
-if [ -d $asdf_path ]; then
-    . asdf_path
-fi
-
-# zoxide
-command -v "zoxide" &> /dev/null
-if [ $? -eq 0 ]; then
-    eval "$(zoxide init zsh)"
-fi
-
 # Load aliases
 . $HOME/.zsh/aliases.zsh
 
