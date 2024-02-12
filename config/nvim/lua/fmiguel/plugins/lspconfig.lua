@@ -7,6 +7,7 @@ local servers = {
   "dockerls",
   "gopls",
   "pyright",
+  "rust_analyzer",
 }
 
 return {
