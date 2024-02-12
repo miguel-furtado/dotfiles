@@ -37,6 +37,12 @@ fi
 # Load aliases
 . $HOME/.zsh/aliases.zsh
 
+# zsh-autosuggestions
+autosugg_path=/usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+if [ -f $autosugg_path ]; then
+    . $autosugg_path
+fi
+
 # Load Prompt
 . $HOME/.zsh/prompt.zsh
 
