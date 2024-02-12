@@ -1,7 +1,10 @@
 -- Remove trailing spaces on save
 vim.api.nvim_create_autocmd("BufWritePre", {
   pattern = {"*"},
-  command = [[%s/\s\+$//e]],
+  callback = function()
+    vim.cmd([[%s/\s\+$//e]])
+    vim.lsp.buf.format()
+  end
 })
 
 -- Highlight yanked region
