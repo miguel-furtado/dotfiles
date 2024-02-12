@@ -1,0 +1,9 @@
+[Unit]
+Description=Distrobox containers automatic updates trigger
+
+[Timer]
+OnUnitInactiveSec=1d
+OnBootSec=10min
+
+[Install]
+WantedBy=timers.target

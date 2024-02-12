@@ -1,0 +1,7 @@
+[Unit]
+Description=Distrobox containers automatic updates
+
+[Service]
+Type=simple
+ExecStart=distrobox-upgrade --all
+StandardOutput=null

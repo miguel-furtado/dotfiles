@@ -15,4 +15,6 @@
     ~/.config/starship.toml: config/starship.toml
     ~/.config/chameleon: config/chameleon
     ~/.config/tealdeer: config/tealdeer
+    ~/.config/systemd/user/distrobox-upgrade.service: config/systemd/user/distrobox-upgrade.service
+    ~/.config/systemd/user/distrobox-upgrade.timer: config/systemd/user/distrobox-upgrade.timer
 
