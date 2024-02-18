@@ -12,5 +12,9 @@ return {
     { "<C-k>", function() require"harpoon":list():select(3) end },
     { "<C-l>", function() require"harpoon":list():select(4) end },
   },
-  opts = {},
+  opts = {
+    settings = {
+      save_on_toggle = true,
+    },
+  },
 }
