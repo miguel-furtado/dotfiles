@@ -6,11 +6,9 @@
 - clean: ['~']
 
 - link:
-    ~/.bashrc: bashrc
-    ~/.bash_aliases: bash_aliases
+    ~/.shellcommon: shellcommon
     ~/.zshrc: zshrc
-    ~/.zshenv: zshenv
-    ~/.zsh: zsh
+    ~/.bashrc: bashrc
     ~/.config/nvim: config/nvim
     ~/.config/starship.toml: config/starship.toml
     ~/.config/chameleon: config/chameleon

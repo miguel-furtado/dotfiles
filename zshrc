@@ -1,12 +1,6 @@
-export \
-    PATH=$HOME/.local/bin:$HOME/go/bin:$PATH \
-    EDITOR="nvim" \
-    DISTRO=$(grep "^ID=" /etc/os-release | cut -d = -f 2) \
-    DISTRO_FAMILY=$(grep "^ID_LIKE=" /etc/os-release | cut -d = -f 2) \
-    XDG_DATA_HOME="$HOME/.local/share" \
-    XDG_CONFIG_HOME="$HOME/.config" \
-    XDG_STATE_HOME="$HOME/.local/state" \
-    XDG_CACHE_HOME="$HOME/.cache"
+. "$HOME/.shellcommon/exports"
+. "$HOME/.shellcommon/aliases"
+. "$HOME/.shellcommon/env"
 
 # Config history
 HISTFILE="$XDG_DATA_HOME/zsh_history"
@@ -34,15 +28,13 @@ if [ "$DISTRO" = "ubuntu" ] && [ -f /etc/zsh_command_not_found ]; then
     . /etc/zsh_command_not_found
 fi
 
-# Load aliases
-. $HOME/.zsh/aliases.zsh
-
 # zsh-autosuggestions
 autosugg_path=/usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-if [ -f $autosugg_path ]; then
-    . $autosugg_path
+if [ -f "$autosugg_path" ]; then
+    . "$autosugg_path"
 fi
 
-# Load Prompt
-. $HOME/.zsh/prompt.zsh
+arrow="%(?.%F{green}.%F{red})➜%f"
+#curr_dir="%F{cyan}%B%1~%f%b"
+PS1="$arrow "
 

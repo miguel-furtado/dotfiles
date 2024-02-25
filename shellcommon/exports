@@ -1,0 +1,16 @@
+#!/bin/sh
+
+export \
+    PATH="$HOME/.local/bin:$HOME/go/bin:$PATH" \
+    EDITOR="nvim" \
+    XDG_DATA_HOME="$HOME/.local/share" \
+    XDG_CONFIG_HOME="$HOME/.config" \
+    XDG_STATE_HOME="$HOME/.local/state" \
+    XDG_CACHE_HOME="$HOME/.cache"
+
+
+# need to declare and export command evaluations separately otherwise export will
+# mask the output and we won't know if the commands failed
+DISTRO="$(grep "^ID=" /etc/os-release | cut -d = -f 2)"
+DISTRO_FAMILY="$(grep "^ID_LIKE=" /etc/os-release | cut -d = -f 2)"
+export DISTRO PATH
