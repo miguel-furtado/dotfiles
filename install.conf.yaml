@@ -5,6 +5,9 @@
 
 - clean: ['~']
 
+- create:
+  - ~/.config/systemd/user/
+
 - link:
     ~/.shellcommon: shellcommon
     ~/.zshrc: zshrc
