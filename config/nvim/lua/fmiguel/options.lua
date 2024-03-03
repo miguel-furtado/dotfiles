@@ -8,7 +8,6 @@ vim.o.hlsearch = false
 vim.o.laststatus = 3
 vim.opt.scrolloff = 8
 vim.opt.swapfile = false
-vim.opt.cindent = true
 
 -- Show ghost chars for some characters like tab an leading space.
 vim.opt.list = true
@@ -22,6 +21,7 @@ vim.g.netrw_bufsettings = "nomod nu nobl nowrap ro" -- line numbers in netrw
 vim.o.tabstop = 4
 vim.o.shiftwidth = 4
 vim.o.expandtab = true
+vim.opt.smartindent = true
 
 vim.wo.wrap = false
 
