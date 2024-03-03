@@ -1,13 +1,13 @@
--- Remove trailing spaces on save
 vim.api.nvim_create_autocmd("BufWritePre", {
+  desc = "Remove trailing spaces on save",
   callback = function()
     vim.cmd([[%s/\s\+$//e]])
     vim.lsp.buf.format()
-  end
+  end,
 })
 
--- Highlight yanked region
 vim.api.nvim_create_autocmd("TextYankPost", {
+  desc = "Highlight yanked region",
   callback = function()
     vim.highlight.on_yank { timeout=200 }
   end,

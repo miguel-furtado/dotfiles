@@ -30,8 +30,9 @@ return {
       }
     end
 
-    -- Attach keybinds only when an lsp is attached
+    --
     vim.api.nvim_create_autocmd("LspAttach", {
+      desc = "Enable lsp keymaps when an lsp is attached",
       callback = function()
         vim.keymap.set("n", "K", vim.lsp.buf.hover)
         vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition)
