@@ -8,6 +8,8 @@ export \
     XDG_STATE_HOME="$HOME/.local/state" \
     XDG_CACHE_HOME="$HOME/.cache"
 
+# show utf-8 characters in less
+export LESSCHARSET=utf-8
 
 # need to declare and export command evaluations separately otherwise export will
 # mask the output and we won't know if the commands failed
