@@ -19,9 +19,9 @@ return {
         virtual_text = false,
       })
 
-    -- Broadcast snippet capability for completion
+    -- Broadcast neovim's native and cmp's capabilities to the server
     local capabilities = vim.lsp.protocol.make_client_capabilities()
-    capabilities.textDocument.completion.completionItem.snippetSupport = true
+    capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
 
     local lspconfig = require("lspconfig")
     for _, server  in ipairs(servers) do
