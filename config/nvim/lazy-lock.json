@@ -17,4 +17,5 @@
   "nvim-lspconfig": { "branch": "master", "commit": "d1bab4cf4b69e49d6058028fd933d8ef5e74e680" },
   "nvim-treesitter": { "branch": "master", "commit": "f197a15b0d1e8d555263af20add51450e5aaa1f0" },
   "plenary.nvim": { "branch": "master", "commit": "50012918b2fc8357b87cff2a7f7f0446e47da174" }
+  "vim-lumen": { "branch": "master", "commit": "58a4ba8c7c674196bcc7e9220aa7b8c1ac800de6" }
 }

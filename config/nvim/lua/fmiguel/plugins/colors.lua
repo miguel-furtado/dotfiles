@@ -1,4 +1,5 @@
 return {
+  { 'vimpostor/vim-lumen' },
   {
     "rebelot/kanagawa.nvim",
     config = function()
