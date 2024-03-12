@@ -1,4 +1,3 @@
-require"fmiguel.options"
-require"fmiguel.lazy"
-require"fmiguel.autocmds"
-
+require("fmiguel.options")
+require("fmiguel.lazy")
+require("fmiguel.autocmds")
