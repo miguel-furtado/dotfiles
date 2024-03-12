@@ -11,7 +11,6 @@ vim.opt.swapfile = false
 
 -- Show ghost chars for some characters like tab an leading space.
 vim.opt.list = true
-vim.opt.listchars:append({ lead = "."})
 
 -- Netrw
 vim.g.netrw_banner = 0
