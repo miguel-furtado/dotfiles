@@ -1,21 +1,16 @@
 return {
   { 'vimpostor/vim-lumen' },
   {
-    "rebelot/kanagawa.nvim",
+    "rose-pine/neovim",
+    name = "rose-pine",
     config = function()
-      vim.api.nvim_create_autocmd("BufRead", {
-        pattern = {"*.js", "*.ts"},
-        callback = function()
-          require"kanagawa".config.colors.theme.all = {syn = {constant = "none"}}
-        end,
-      })
-    end
-  },
-  {
-    "Mofiqul/adwaita.nvim",
-    config = function()
-      -- vim.g.adwaita_darker = true
-      vim.cmd("colorscheme adwaita")
+      require("rose-pine").setup {
+        dark_variant = "moon", -- main, moon, or dawn
+        styles = {
+          italic = false,
+        },
+      }
+      vim.cmd.colorscheme("rose-pine")
     end
   },
 }
