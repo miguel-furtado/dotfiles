@@ -6,6 +6,7 @@ alias la="ls -lAh"
 # some colour plz
 alias ls="ls --color=auto"
 alias grep="grep --color"
+alias diff="diff --color"
 
 if [ "$DISTRO_FAMILY" = "debian" ] || [ "$DISTRO" = "debian" ]; then
     alias bat="batcat"
