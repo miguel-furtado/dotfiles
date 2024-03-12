@@ -2,7 +2,6 @@ vim.api.nvim_create_autocmd("BufWritePre", {
   desc = "Remove trailing spaces on save",
   callback = function()
     vim.cmd([[%s/\s\+$//e]])
-    vim.lsp.buf.format()
   end,
 })
 
