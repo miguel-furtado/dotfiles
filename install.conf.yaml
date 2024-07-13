@@ -9,4 +9,4 @@
     ~/.shellcommon: shellcommon
     ~/.zshrc: zshrc
     ~/.config/nvim: config/nvim
-
+    ~/.config/zed: config/zed

@@ -1,0 +1,8 @@
+[
+  {
+    "context": "Editor || Terminal",
+    "bindings": {
+      "ctrl-shift-j": "workspace::ToggleBottomDock"
+    }
+  }
+]
