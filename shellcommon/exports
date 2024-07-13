@@ -2,7 +2,7 @@
 
 export \
     PATH="$HOME/.local/bin:$HOME/go/bin:$PATH" \
-    EDITOR="nvim" \
+    EDITOR="zed --wait" \
     XDG_DATA_HOME="$HOME/.local/share" \
     XDG_CONFIG_HOME="$HOME/.config" \
     XDG_STATE_HOME="$HOME/.local/state" \
