@@ -16,11 +16,13 @@ setopt share_history          # share command history data between sessions
 # Don't save failed commands to history
 zshaddhistory() { whence ${${(z)1}[1]} >| /dev/null || return 1 }
 
-# Enable vim mode
-bindkey -v
-
 # Bind history search
 bindkey '^R' history-incremental-search-backward
+
+bindkey "^[[1;5C" forward-word
+bindkey "^[[1;5D" backward-word
+bindkey  "^[[H"   beginning-of-line
+bindkey  "^[[F"   end-of-line
 
 # Ubuntu's command not found package provides instructions to install the
 # package that provides the command in case it was not found.
