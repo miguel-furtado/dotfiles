@@ -43,8 +43,6 @@ return {
 				vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
 				vim.keymap.set("n", "<leader>R", vim.lsp.buf.rename)
 				vim.keymap.set("n", "<leader>a", vim.lsp.buf.code_action)
-				vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references)
-				vim.keymap.set("n", "<leader>ss", vim.lsp.buf.document_symbol)
 				-- figure out vim.lsp.buf.workspace_symbol
 			end,
 		})
