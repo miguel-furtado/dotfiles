@@ -8,6 +8,7 @@ local servers = {
 	"gopls",
 	"pyright",
 	"rust_analyzer",
+	"clangd",
 }
 
 return {
