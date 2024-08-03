@@ -13,6 +13,7 @@
     ~/.zshrc: zshrc
     ~/.bashrc: bashrc
     ~/.config/nvim: config/nvim
+    ~/.config/zed: config/zed
     ~/.config/starship.toml: config/starship.toml
     ~/.config/chameleon: config/chameleon
     ~/.config/tealdeer: config/tealdeer

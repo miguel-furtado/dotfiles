@@ -1,0 +1,15 @@
+[
+  {
+    "context": "Editor",
+    "bindings": {
+      "ctrl-j": "workspace::ToggleBottomDock",
+      "ctrl-7": "editor::ToggleComments"
+    }
+  },
+  {
+    "context": "Terminal",
+    "bindings": {
+      "ctrl-j": "workspace::ToggleBottomDock"
+    }
+  }
+]
