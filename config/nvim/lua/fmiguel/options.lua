@@ -1,4 +1,3 @@
-vim.o.termguicolors = true
 vim.o.number = true
 vim.o.spell = true
 vim.o.mouse = "a" --enable mouse cursor
