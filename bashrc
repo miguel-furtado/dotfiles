@@ -28,3 +28,6 @@ shopt -s checkwinsize
 # vi keybindings
 set -o vi
 
+if command -v starship &> /dev/null; then
+    eval "$(starship init bash)"
+fi
