@@ -11,6 +11,7 @@ return {
     { "<leader>dg", function() require"telescope.builtin".diagnostics() end },
     { "<leader>gg", function() require"telescope.builtin".live_grep() end },
     { "<leader>gr", function() require"telescope.builtin".lsp_references() end },
+    { "<leader>pp", function() require'telescope'.extensions.projects.projects{} end },
   },
   config = function()
     local telescope = require("telescope")
@@ -23,6 +24,7 @@ return {
       },
     }
     telescope.load_extension("fzf")
+    telescope.load_extension('projects')
   end,
 }
 
