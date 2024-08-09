@@ -42,9 +42,10 @@ function lsp_config()
 end
 
 return {
-	{ "williamboman/mason.nvim", opts = {} },
+	{ "williamboman/mason.nvim", opts = {}, version = "1" },
 	{
 		"williamboman/mason-lspconfig.nvim",
+		version = "1",
 		config = lsp_config,
 	},
 	"neovim/nvim-lspconfig",
