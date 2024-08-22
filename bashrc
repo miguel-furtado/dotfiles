@@ -19,7 +19,7 @@ shopt -s histappend
 HISTSIZE=50000
 # expand history before running the command
 shopt -s histverify
-HISTFILE="$HOME/.bash_history"
+HISTFILE="$XDG_DATA_HOME/bash_history"
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
