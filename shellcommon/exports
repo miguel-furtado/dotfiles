@@ -1,12 +1,13 @@
 #!/bin/sh
 
 export \
-    PATH="$HOME/.local/bin:$HOME/go/bin:$PATH" \
     EDITOR="nvim" \
     XDG_DATA_HOME="$HOME/.local/share" \
     XDG_CONFIG_HOME="$HOME/.config" \
     XDG_STATE_HOME="$HOME/.local/state" \
-    XDG_CACHE_HOME="$HOME/.cache"
+    XDG_CACHE_HOME="$HOME/.cache" \
+	GOPATH="$XDG_DATA_HOME/go"
+    PATH="$HOME/.local/bin:$GOPATH/bin:$PATH" \
 
 # Better defaults to the less command
 export LESSCHARSET="utf-8" \
