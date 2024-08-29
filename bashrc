@@ -35,3 +35,6 @@ fi
 if command -v zoxide &> /dev/null; then
     eval "$(zoxide init bash)"
 fi
+
+export PS1='\[\e[${PROMPT_COLOR:-32}m\]\u@\h\[\e[0m\]:\[\e[${PROMPT_COLOR:-32}m\]\w\[\e[0;31m\]${?#0}\[\e[0m\]\$ '
+

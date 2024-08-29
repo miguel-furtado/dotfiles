@@ -7,7 +7,10 @@ export \
     XDG_STATE_HOME="$HOME/.local/state" \
     XDG_CACHE_HOME="$HOME/.cache" \
 	GOPATH="$XDG_DATA_HOME/go"
-    PATH="$HOME/.local/bin:$GOPATH/bin:$PATH" \
+    PATH="/usr/local/go/bin:$HOME/.local/bin:$GOPATH/bin:$PATH" \
+
+export NVM_DIR="$HOME/.config/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
 # Better defaults to the less command
 export LESSCHARSET="utf-8" \
