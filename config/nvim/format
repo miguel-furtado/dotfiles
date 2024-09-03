@@ -1,0 +1,9 @@
+#!/bin/sh
+
+if ! command -v npx > /dev/null; then
+	printf "cant't proceed because npx is not installed\n"
+	exit 1
+fi
+
+npx @johnnymorganz/stylua-bin .
+
