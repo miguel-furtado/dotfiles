@@ -1,13 +1,17 @@
-#!/bin/sh
+#!/bin
 
 export \
     EDITOR="nvim" \
     XDG_DATA_HOME="$HOME/.local/share" \
     XDG_CONFIG_HOME="$HOME/.config" \
     XDG_STATE_HOME="$HOME/.local/state" \
-    XDG_CACHE_HOME="$HOME/.cache" \
-	GOPATH="$XDG_DATA_HOME/go"
-    PATH="/usr/local/go/bin:$HOME/.local/bin:$GOPATH/bin:$PATH" \
+    XDG_CACHE_HOME="$HOME/.cache"
+
+# zsh won't set these paths correctly if not declared in separate exports,
+# I suspect it's because of dependencies on paths in the same export statement
+export \
+    GOPATH="$XDG_DATA_HOME/go" \
+    PATH="/usr/local/go/bin:$HOME/.local/bin:$GOPATH/bin:$PATH"
 
 export NVM_DIR="$HOME/.config/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
