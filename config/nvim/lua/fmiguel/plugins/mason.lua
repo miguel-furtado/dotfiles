@@ -23,7 +23,7 @@ function lsp_config()
 		ensure_installed = {
 			"html",
 			"cssls",
-			"tsserver",
+			"ts_ls",
 			"eslint",
 			"jsonls",
 			"dockerls",
