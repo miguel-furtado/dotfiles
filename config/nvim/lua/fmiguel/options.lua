@@ -26,4 +26,3 @@ vim.keymap.set("n", "<leader>E", function()
 	vim.cmd("Ex")
 end, { silent = true })
 
-vim.cmd("colorscheme lunaperche")
