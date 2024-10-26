@@ -33,5 +33,5 @@ if command -v zoxide &> /dev/null; then
     eval "$(zoxide init bash)"
 fi
 
-export PS1='\[\e[1;34m\]\W \[\e[0;31m\]${?#0}\[\e[32m\]\$ \[\e[0m\]'
+export PS1="\[\e[1;34m\]\W \[\e[0;31m\]${?#0}\[\e[32m\]> \[\e[0m\]"
 
