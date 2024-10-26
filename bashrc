@@ -25,9 +25,6 @@ HISTFILE="$XDG_DATA_HOME/bash_history"
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
 
-# vi keybindings
-set -o vi
-
 if command -v starship &> /dev/null; then
     eval "$(starship init bash)"
 fi
