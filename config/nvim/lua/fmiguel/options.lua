@@ -9,6 +9,7 @@ vim.opt.scrolloff = 8
 vim.opt.swapfile = false
 vim.wo.wrap = false
 vim.opt.list = true -- show ghost characters for tabs and leading spaces
+vim.o.guicursor="n-v-c-i:block"
 
 -- Netrw
 vim.g.netrw_banner = 0
