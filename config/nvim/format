@@ -5,5 +5,5 @@ if ! command -v npx > /dev/null; then
 	exit 1
 fi
 
-npx @johnnymorganz/stylua-bin .
+npm exec --yes @johnnymorganz/stylua-bin .
 
