@@ -1,13 +1,13 @@
 return {
 	"stevearc/conform.nvim",
 	lazy = false,
-	version = "^5",
-	keys = { {
+	version = "^8",
+	keys = {{
 		"<leader>ff",
 		function()
 			require("conform").format()
 		end,
-	} },
+	}},
 	opts = {
 		formatters_by_ft = {
 			typescript = { "prettier" },
@@ -24,8 +24,8 @@ return {
 			lua = { "stylua" },
 			python = { "black" },
 		},
-		format_on_save = {
-			lsp_fallback = true,
+		default_format_opts = {
+			lsp_format = "fallback",
 		},
 	},
 }
