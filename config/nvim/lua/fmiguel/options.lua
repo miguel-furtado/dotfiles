@@ -12,8 +12,8 @@ vim.opt.list = true -- show ghost characters for tabs and leading spaces
 vim.o.guicursor="n-v-c-i:block"
 
 -- Netrw
-vim.g.netrw_banner = 0
-vim.g.netrw_bufsettings = "nomod nu nobl nowrap ro" -- line numbers in netrw
+vim.g.netrw_bufsettings = "nomod nobl nowrap ro" -- line numbers in netrw
+vim.g.netrw_liststyle = 3
 
 -- Tabs and indentation
 vim.o.tabstop = 4
