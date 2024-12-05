@@ -2,6 +2,7 @@ return {
 	"nvim-telescope/telescope.nvim",
 	version = "0.x.x",
 	dependencies = {
+		'nvim-lua/plenary.nvim',
 		{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
 	},
 	keys = {
