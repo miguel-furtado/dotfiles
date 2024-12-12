@@ -1,6 +1,5 @@
 return {
 	"stevearc/conform.nvim",
-	lazy = false,
 	version = "^8",
 	keys = {{
 		"<leader>ff",

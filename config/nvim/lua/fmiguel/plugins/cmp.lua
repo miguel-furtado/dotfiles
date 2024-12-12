@@ -42,6 +42,7 @@ end
 
 return {
 	"hrsh7th/nvim-cmp", -- the completion engine
+	event = "InsertEnter",
 	dependencies = {
 		{
 			"L3MON4D3/LuaSnip", -- snippets engine
