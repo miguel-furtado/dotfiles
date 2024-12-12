@@ -52,6 +52,9 @@ return {
 			pickers = {
 				find_files = { hidden = true },
 			},
+			extensions = {
+				fzf = {},
+			},
 		})
 		telescope.load_extension("fzf")
 	end,
