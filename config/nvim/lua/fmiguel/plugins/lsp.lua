@@ -10,7 +10,6 @@ return {
 		vim.api.nvim_create_autocmd("LspAttach", {
 			desc = "Enable lsp keymaps when an lsp is attached",
 			callback = function()
-				vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition)
 				vim.keymap.set("n", "<leader>gt", vim.lsp.buf.type_definition)
 				vim.keymap.set("n", "<leader>gi", vim.lsp.buf.implementation)
 				vim.keymap.set("n", "<leader>R", vim.lsp.buf.rename)
