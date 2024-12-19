@@ -7,18 +7,13 @@ export \
     XDG_STATE_HOME="$HOME/.local/state" \
     XDG_CACHE_HOME="$HOME/.cache"
 
-# zsh won't set these paths correctly if not declared in separate exports,
-# I suspect it's because of dependencies on paths in the same export statement
-export \
-    GOPATH="$XDG_DATA_HOME/go" \
-    PATH="/usr/local/go/bin:$HOME/.local/bin:$GOPATH/bin:$PATH"
+export GOPATH="$XDG_DATA_HOME/go"
 
 export NVM_DIR="$HOME/.config/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
 # Better defaults to the less command
-export LESSCHARSET="utf-8" \
-   LESS="--tabs 4 --RAW-CONTROL-CHARS --quit-if-one-screen"
+export LESSCHARSET="utf-8"
 
 # Need to declare and export command evaluations separately otherwise export will
 # mask the output and we won't know if the commands failed
