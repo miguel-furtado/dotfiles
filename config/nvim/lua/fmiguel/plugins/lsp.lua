@@ -1,7 +1,7 @@
 return {
 	"neovim/nvim-lspconfig",
 	version = "^1",
-	config = function ()
+	config = function()
 		-- Disable inline error messages
 		vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
 			virtual_text = false,
@@ -17,16 +17,12 @@ return {
 			end,
 		})
 
-		-- Broadcast neovim's native and cmp's capabilities to the server
-		local capabilities = vim.lsp.protocol.make_client_capabilities()
-		capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
-
 		servers = { "html", "cssls", "ts_ls", "eslint", "jsonls", "dockerls", "pyright", "clangd", "jdtls" }
-
+		local capabilities = require("blink.cmp").get_lsp_capabilities()
 		for _, server in ipairs(servers) do
 			require("lspconfig")[server].setup({
 				capabilities = capabilities,
 			})
 		end
-	end
+	end,
 }
