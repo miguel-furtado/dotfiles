@@ -1,8 +1,8 @@
 return {
 	{
 		"vimpostor/vim-lumen",
-		lazy=false,
-		priority=1000
+		lazy = false,
+		priority = 1000,
 	},
 	{
 		"EdenEast/nightfox.nvim",
@@ -29,14 +29,13 @@ return {
 		enabled = false,
 		config = function()
 			vim.api.nvim_create_autocmd("BufRead", {
-				pattern = {"*.js", "*.ts"},
+				pattern = { "*.js", "*.ts" },
 				callback = function()
-					require"kanagawa".config.colors.theme.all = {syn = {constant = "none"}}
+					require("kanagawa").config.colors.theme.all = { syn = { constant = "none" } }
 				end,
 			})
 
 			vim.cmd("colorscheme kanagawa")
-
 		end,
 	},
 }

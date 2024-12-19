@@ -1,12 +1,12 @@
 return {
 	"stevearc/conform.nvim",
 	version = "^8",
-	keys = {{
+	keys = { {
 		"<leader>ff",
 		function()
 			require("conform").format()
 		end,
-	}},
+	} },
 	opts = {
 		formatters_by_ft = {
 			typescript = { "prettier" },
