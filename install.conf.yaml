@@ -10,13 +10,13 @@
 
 - link:
     ~/.shellcommon: shellcommon
-    ~/.zshrc: zshrc
-    ~/.bashrc: bashrc
-    ~/.config/nvim: config/nvim
-    ~/.config/zed: config/zed
-    ~/.config/starship.toml: config/starship.toml
-    ~/.config/chameleon: config/chameleon
-    ~/.config/tealdeer: config/tealdeer
-    ~/.config/systemd/user/distrobox-update.service: config/systemd/user/distrobox-update.service
-    ~/.config/systemd/user/distrobox-update.timer: config/systemd/user/distrobox-update.timer
+    ~/.zshrc: zsh/zshrc
+    ~/.bashrc: bash/bashrc
+    ~/.config/nvim: neovim
+    ~/.config/zed: zed
+    ~/.config/starship.toml: starship/starship.toml
+    ~/.config/chameleon: chameleon
+    ~/.config/tealdeer: tealdeer
+    ~/.config/systemd/user/distrobox-update.service: systemd/user/distrobox-update.service
+    ~/.config/systemd/user/distrobox-update.timer: systemd/user/distrobox-update.timer
 
