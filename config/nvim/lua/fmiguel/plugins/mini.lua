@@ -17,6 +17,5 @@ return {
 			delay = { text_change = 0 },
 		})
 		require("mini.pairs").setup()
-		vim.cmd("colorscheme minischeme")
 	end,
 }
