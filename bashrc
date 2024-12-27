@@ -35,3 +35,7 @@ fi
 
 export PS1="\[\e[1;34m\]\W \[\e[0;31m\]${?#0}\[\e[32m\]> \[\e[0m\]"
 
+# Set up fzf key bindings and fuzzy completion
+if command -v fzf &> /dev/null; then
+    eval "$(fzf --bash)"
+fi

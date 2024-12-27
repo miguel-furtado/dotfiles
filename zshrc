@@ -43,3 +43,8 @@ PS1="$arrow $curr_dir "
 if command -v zoxide &> /dev/null; then
     eval "$(zoxide init zsh)"
 fi
+
+# Set up fzf key bindings and fuzzy completion
+if command -v fzf &> /dev/null; then
+    eval "$(fzf --zsh)"
+fi
