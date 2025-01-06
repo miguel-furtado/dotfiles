@@ -17,7 +17,8 @@ return {
 			end,
 		})
 
-		servers = { "html", "cssls", "ts_ls", "eslint", "jsonls", "dockerls", "pyright", "clangd", "jdtls" }
+		servers =
+			{ "html", "cssls", "ts_ls", "eslint", "jsonls", "dockerls", "pyright", "clangd", "jdtls", "rust_analyzer" }
 		local capabilities = require("blink.cmp").get_lsp_capabilities()
 		for _, server in ipairs(servers) do
 			require("lspconfig")[server].setup({
