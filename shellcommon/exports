@@ -1,4 +1,4 @@
-#!/bin
+#!/bin/sh
 
 export \
     EDITOR="nvim" \
@@ -20,3 +20,5 @@ export LESSCHARSET="utf-8"
 DISTRO="$(grep "^ID=" /etc/os-release | cut -d = -f 2)"
 DISTRO_FAMILY="$(grep "^ID_LIKE=" /etc/os-release | cut -d = -f 2)"
 export DISTRO PATH
+
+export PATH="$HOME/.local/bin:$PATH"
