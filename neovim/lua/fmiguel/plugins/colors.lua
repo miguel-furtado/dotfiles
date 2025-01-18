@@ -2,7 +2,7 @@ function set_colorscheme()
 	if vim.o.background == "light" then
 		vim.cmd("colorscheme dayfox")
 	else
-		vim.cmd("colorscheme dracula")
+		vim.cmd("colorscheme carbonfox")
 	end
 end
 
@@ -19,12 +19,9 @@ return {
 		priority = 1000,
 	},
 	{
-		"Mofiqul/dracula.nvim",
-		config = function()
-			set_colorscheme()
-		end,
-	},
-	{
 		"EdenEast/nightfox.nvim",
+		config=function()
+			set_colorscheme()
+		end
 	},
 }
