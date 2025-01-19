@@ -20,8 +20,8 @@ return {
 	},
 	{
 		"EdenEast/nightfox.nvim",
-		config=function()
+		config = function()
 			set_colorscheme()
-		end
+		end,
 	},
 }

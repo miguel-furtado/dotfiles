@@ -32,4 +32,3 @@ end, { silent = true })
 
 -- disable inline diagnostics
 vim.diagnostic.config({ virtual_text = false })
-
