@@ -29,3 +29,7 @@ end, { silent = true })
 vim.keymap.set("n", "<leader>E", function()
 	vim.cmd("Ex")
 end, { silent = true })
+
+-- disable inline diagnostics
+vim.diagnostic.config({ virtual_text = false })
+
