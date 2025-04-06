@@ -12,6 +12,7 @@ vim.opt.list = true -- show ghost characters for tabs and leading spaces
 vim.o.guicursor = "n-v-c-i:block"
 vim.o.termguicolors = true
 vim.opt.cursorline = true
+vim.o.relativenumber = true
 
 -- Netrw
 vim.g.netrw_bufsettings = "nomod nobl nowrap ro" -- line numbers in netrw
