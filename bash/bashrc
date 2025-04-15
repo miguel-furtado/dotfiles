@@ -33,7 +33,7 @@ if command -v zoxide &> /dev/null; then
     eval "$(zoxide init bash)"
 fi
 
-export PS1="\[\e[1;34m\]\W \[\e[0;31m\]${?#0}\[\e[32m\]> \[\e[0m\]"
+export PS1='\[$(if [[ $? != 0 ]]; then echo "\e[0;31m➜"; else echo "\e[0;32m➜"; fi)\] \[\e[1;34m\]\W \[\e[0m\]'
 
 # Set up fzf key bindings and fuzzy completion
 if command -v fzf &> /dev/null; then
