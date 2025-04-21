@@ -12,6 +12,6 @@ end
 
 vim.opt.rtp:prepend(lazypath)
 require("lazy").setup("fmiguel.plugins", {
-	defaults = { version = "^10" },
+	defaults = { version = "^11" },
 	change_detection = { enabled = false },
 })
