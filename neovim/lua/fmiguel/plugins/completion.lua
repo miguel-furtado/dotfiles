@@ -2,7 +2,7 @@ return {
 	"saghen/blink.cmp",
 	event = "InsertEnter",
 	dependencies = "rafamadriz/friendly-snippets",
-	version = "v0.*",
+	version = "^1",
 	opts = {
 		appearance = {
 			-- Sets the fallback highlight groups to nvim-cmp's highlight groups
