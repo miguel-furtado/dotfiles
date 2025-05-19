@@ -38,4 +38,8 @@ export PS1='\[$(if [[ $? != 0 ]]; then echo "\e[0;31mâžœ"; else echo "\e[0;32mâž
 # Set up fzf key bindings and fuzzy completion
 if command -v fzf &> /dev/null; then
     eval "$(fzf --bash)"
+	fzf_copy() {
+		fzf | tr --delete '\n' | wl-copy
+	}
+	bind -x '"\C-f":fzf_copy'
 fi
