@@ -22,6 +22,7 @@ return {
 			yaml = { "prettier" },
 			lua = { "stylua" },
 			python = { "black" },
+			["_"] = { "trim_whitespace" }, -- for filetypes that don't have a configured formatter
 		},
 		default_format_opts = {
 			lsp_format = "fallback",
