@@ -1,3 +1,3 @@
-require("fmiguel.options")
-require("fmiguel.lazy")
-require("fmiguel.autocmds")
+require("fmiguel.core.options")
+require("fmiguel.core.lazy")
+require("fmiguel.core.autocmds")
