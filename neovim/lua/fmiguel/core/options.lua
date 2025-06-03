@@ -33,3 +33,20 @@ end, { silent = true })
 
 -- disable inline diagnostics
 vim.diagnostic.config({ virtual_text = false })
+
+function set_colorscheme()
+	if vim.o.background == "light" then
+		vim.cmd("colorscheme wildcharm")
+	else
+		vim.cmd("colorscheme habamax")
+	end
+end
+
+set_colorscheme()
+vim.api.nvim_create_autocmd("OptionSet", {
+	desc = "Update colorscheme on background change",
+	pattern = "background",
+	callback = function()
+		set_colorscheme()
+	end,
+})
