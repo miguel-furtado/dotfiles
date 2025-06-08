@@ -1,0 +1,18 @@
+#!/usr/bin/sh
+
+set -eu
+
+if command -v prettier &> /dev/null; then
+	echo "Checking formatation with prettier"
+	prettier --check .
+else
+	echo "Prettier is nowhere to be found"
+fi
+
+if command -v stylua &> /dev/null; then
+	echo "Checking formatation with stylua"
+	stylua --check .
+else
+	echo "Stylua is nowhere to be found"
+fi
+
