@@ -51,7 +51,6 @@ vim.api.nvim_create_autocmd("OptionSet", {
 	end,
 })
 
-
 vim.api.nvim_create_autocmd("TextYankPost", {
 	desc = "Highlight yanked region",
 	callback = function()
