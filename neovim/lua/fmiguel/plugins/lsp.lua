@@ -13,10 +13,20 @@ return {
 			end,
 		})
 
-		local servers =
-			{ "html", "cssls", "ts_ls", "eslint", "jsonls", "dockerls", "pyright", "clangd", "jdtls", "rust_analyzer" }
+		local servers = {
+			"html",
+			"cssls",
+			"ts_ls",
+			"eslint",
+			"jsonls",
+			"dockerls",
+			"clangd",
+			"jdtls",
+			"rust_analyzer",
+			"pyright",
+		}
 		for _, server in ipairs(servers) do
-			require("lspconfig")[server].setup({})
+			vim.lsp.enable(server)
 		end
 	end,
 }
