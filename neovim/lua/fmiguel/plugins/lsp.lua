@@ -23,7 +23,7 @@ return {
 			"clangd",
 			"jdtls",
 			"rust_analyzer",
-			"pyright",
+			"basedpyright",
 		}
 		for _, server in ipairs(servers) do
 			vim.lsp.enable(server)
