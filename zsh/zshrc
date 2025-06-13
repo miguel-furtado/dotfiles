@@ -1,3 +1,7 @@
+if [ -f /etc/zshrc ]; then
+    . /etc/zshrc
+fi
+
 . "$HOME/.shellcommon/exports"
 . "$HOME/.shellcommon/aliases"
 . "$HOME/.shellcommon/env"
@@ -28,10 +32,6 @@ bindkey  "^[[F"   end-of-line
 # package that provides the command in case it was not found.
 if [ "$DISTRO" = "ubuntu" ] && [ -f /etc/zsh_command_not_found ]; then
     . /etc/zsh_command_not_found
-fi
-
-if [ -f /etc/zshrc ]; then
-    . /etc/zshrc
 fi
 
 # zsh-autosuggestions
